@@ -1,9 +1,16 @@
-import {
-  configureStore,
-  createAction,
-  createReducer,
-  createSlice,
-} from '@reduxjs/toolkit';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+// Залишається в store
+// import { persistStore, persistReducer } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
+
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
+
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
+// const persistor = persistStore(store)
+//
 
 const initialState = {
   contacts: [
@@ -39,19 +46,6 @@ const filterSlice = createSlice({
 });
 
 export const { addFilter } = filterSlice.actions;
-
-// export const addContact = createAction('contacts/addContact');
-// export const deleteContact = createAction('filter/deleteContact');
-// export const addFilter = createAction('filter/addFilter');
-
-// const contactsReducer = createReducer(initialState.contacts, {
-//   [addContact]: (state, action) => [...state, action.payload],
-//   [deleteContact]: (state, action) =>
-//     state.filter(contact => contact.id !== action.payload),
-// });
-// const filterReducer = createReducer(initialState.filter, {
-//   [addFilter]: (state, action) => action.payload,
-// });
 
 export const store = configureStore({
   reducer: {
