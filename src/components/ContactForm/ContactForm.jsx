@@ -4,7 +4,8 @@ import { nanoid } from 'nanoid';
 import { Button, Input, Form, Label } from './ContactForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/store';
+import { addContact } from 'redux/contactsSlice';
+// import { addContact } from 'redux/store';
 
 const ContactForm = () => {
   const { contacts } = useSelector(state => state);
